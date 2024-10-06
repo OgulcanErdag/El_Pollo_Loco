@@ -1,0 +1,329 @@
+@font-face {
+    font-family: 'zabras';
+    src: url('fonts/Zabars.ttf') format('truetype');
+}
+
+canvas {
+    display: block;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-image: url('img/desert.png');
+    background-position: center;
+    background-size: cover;
+    font-family: 'zabras', Arial, Helvetica, sans-serif;
+    overflow-y: hidden;
+}
+
+h1 {
+    font-size: 64px;
+    letter-spacing: 3px;
+    text-shadow: 1px 0px 1px #CCCCCC, 0px 1px 1px #EEEEEE, 2px 1px 1px #CCCCCC, 1px 2px 1px #EEEEEE, 3px 2px 1px #CCCCCC, 2px 3px 1px #EEEEEE, 4px 3px 1px #CCCCCC, 3px 4px 1px #EEEEEE, 5px 4px 1px #CCCCCC, 4px 5px 1px #EEEEEE, 6px 5px 1px #CCCCCC, 5px 6px 1px #EEEEEE, 7px 6px 1px #CCCCCC;
+    color: #0a0905;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.d-block {
+    display: block !important;
+}
+
+.start-screen {
+    width: 720px;
+    height: 480px;
+    position: relative;
+    background-image: url('img/9_intro_outro_screens/start/startscreen_1.png');
+    background-repeat: no-repeat !important;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.game-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+}
+
+.btn-container {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px;
+    box-sizing: border-box;
+    display: none !important;
+}
+
+.btn-container-top {
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-end;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.btns-top {
+    display: flex;
+}
+
+.btn {
+    font-family: 'zabras';
+    font-size: 32px;
+    letter-spacing: 2px;
+    border: 2px solid rgba(128, 32, 0, 0.8);
+    text-shadow: #e0e0e0 1px 1px 0;
+    border-radius: 10px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(128, 32, 0, 0.148);
+    cursor: pointer;
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    width: calc(100% - 40px);
+    max-width: 300px;
+    box-sizing: border-box;
+}
+
+.btn:hover {
+    background-color: rgba(128, 32, 0, 0.289);
+}
+
+.btns-top button {
+    border: 2px solid rgba(128, 32, 0, 0.8);
+    border-radius: 100px;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 8px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.btn-container-left {
+    display: none;
+}
+
+#btn-sound {
+    display: none;
+}
+
+.btn-container-left button {
+    border: 2px solid rgba(128, 32, 0, 0.8);
+    border-radius: 100px;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 8px;
+    background-color: transparent;
+}
+
+.play-again-button {
+    font-family: 'zabras';
+    font-size: 32px;
+    letter-spacing: 2px;
+    border: 2px solid rgba(128, 32, 0, 0.8);
+    text-shadow: #e0e0e0 1px 1px 0;
+    border-radius: 10px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(128, 32, 0, 0.148);
+    cursor: pointer;
+    position: fixed;
+    bottom: 50px;
+    z-index: 1000;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    width: calc(100% - 40px);
+    max-width: 300px;
+    box-sizing: border-box;
+}
+
+.play-again-button:hover {
+    background-color: rgba(128, 32, 0, 0.289);
+}
+
+#impressum-link {
+    display: flex;
+}
+
+.orientation-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    /* border-radius: 10px; */
+    text-align: center;
+    font-size: 48px;
+    z-index: 1000;
+    animation: fadeIn 1s ease-out;
+    width: 100%;
+    max-width: 800px;
+    height: 100%;
+}
+
+p {
+    position: relative;
+    top: 50%;
+}
+
+.phone-logo {
+    width: 80px;
+    height: 150px;
+    position: relative;
+    top: 20%;
+    margin: 40px auto;
+    background-image: url('img/phone-logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: rotatePhone 3s linear infinite;
+    z-index: 1000;
+}
+
+
+@keyframes rotatePhone {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-30deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@media only screen and (orientation: portrait) {
+    #orientation-message {
+        display: block !important;
+    }
+}
+
+
+@media only screen and (orientation: landscape) {
+    #orientation-message {
+        display: none !important;
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+    .start-screen {
+        width: 1080px;
+        height: 720px;
+    }
+}
+
+@media only screen and (max-width: 1368px) {
+    .btn-container {
+        display: flex !important;
+    }
+
+    .btn-container-left,
+    .btn-container-top,
+    .btns-top,
+    .btn {
+        display: flex !important;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    canvas {
+        width: 100%;
+    }
+
+    #impressum-link {
+        display: none !important;
+    }
+
+    .btn-container {
+        width: 100%;
+        padding: 4px;
+        display: flex;
+    }
+
+    .btn-container-left button {
+        height: 30px;
+        width: 30px;
+        margin: 4px;
+    }
+
+    .start-screen {
+        width: 100%;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+}
+
+@media only screen and (max-height: 480px) {
+    canvas {
+        height: 100vh;
+    }
+
+    #impressum-link {
+        display: none;
+    }
+
+    h1 {
+        display: none !important;
+    }
+
+    .btn-container {
+        width: 100%;
+        padding: 4px;
+    }
+
+    .btn-container-left button {
+        height: 30px;
+        width: 30px;
+        margin: 4px;
+    }
+
+    .start-screen {
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+    }
+}
